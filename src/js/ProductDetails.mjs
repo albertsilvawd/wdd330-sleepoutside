@@ -27,7 +27,7 @@ export default class ProductDetails {
         document.querySelector('.product-detail h2').textContent =
             this.product.NameWithoutBrand;
         document.querySelector('.product-detail img').src =
-            this.product.Image;
+            this.product.Images.PrimaryLarge;
         document.querySelector('.product-detail img').alt =
             this.product.NameWithoutBrand;
         document.querySelector('.product-detail .product-card__price').textContent =
