@@ -25,6 +25,15 @@ export default class ShoppingCart {
             this.listElement.innerHTML = '<li>Your cart is empty.</li>';
         } else {
             renderListWithTemplate(cartItemTemplate, this.listElement, cartItems);
+            this.renderTotal(cartItems);
+        }
+    }
+
+    renderTotal(cartItems) {
+        const total = cartItems.reduce((sum, item) => sum + parseFloat(item.FinalPrice), 0);
+        const totalElement = document.getElementById('cart-total');
+        if (totalElement) {
+            totalElement.textContent = total.toFixed(2);
         }
     }
 }
