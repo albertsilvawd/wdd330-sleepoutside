@@ -305,3 +305,18 @@ footer {
   margin-top: 0.5rem;
   text-align: center;
 }
+
+.cart-card__image img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.cart-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  padding: 1rem;
+  border-top: 2px solid #c05f00;
+  margin-top: 1rem;
+}
