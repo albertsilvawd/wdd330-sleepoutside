@@ -56,6 +56,7 @@ export async function loadHeaderFooter() {
   const footerElement = document.querySelector('#main-footer');
   renderWithTemplate(headerTemplate, headerElement, null, updateCartCount);
   renderWithTemplate(footerTemplate, footerElement);
+  setupSearch();
 }
 
 export function updateCartCount() {
@@ -81,5 +82,25 @@ export function alertMessage(message, scroll = true) {
   main.prepend(alert);
   if (scroll) {
     window.scrollTo(0, 0);
+  }
+}
+export function setupSearch() {
+  const searchBtn = document.getElementById('search-btn');
+  const searchInput = document.getElementById('quick-search');
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `/product_listing/?category=${query}`;
+      }
+    });
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = searchInput.value.trim();
+        if (query) {
+          window.location.href = `/product_listing/?category=${query}`;
+        }
+      }
+    });
   }
 }

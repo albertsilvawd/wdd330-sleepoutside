@@ -19,6 +19,21 @@ export default class ProductDetails {
         const cartItems = getLocalStorage('so-cart') || [];
         cartItems.push(this.product);
         setLocalStorage('so-cart', cartItems);
+
+        // Animate cart icon
+        const cartIcon = document.querySelector('.cart a');
+        if (cartIcon) {
+            cartIcon.classList.add('cart-bounce');
+            cartIcon.addEventListener('animationend', () => {
+                cartIcon.classList.remove('cart-bounce');
+            }, { once: true });
+        }
+
+        // Update cart count
+        const cartCount = document.getElementById('cart-count');
+        if (cartCount) {
+            cartCount.textContent = cartItems.length;
+        }
     }
 
     renderProductDetails() {

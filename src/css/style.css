@@ -33,6 +33,7 @@ img {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
 }
 
@@ -75,7 +76,6 @@ p {
   font-size: var(--small-font);
   width: 110px;
   height: 80px;
-
   flex-direction: column;
   align-items: flex-end;
   box-shadow: 1px 1px 4px var(--light-grey);
@@ -118,17 +118,32 @@ button {
 
 /* Cart icon styles */
 .cart {
-  padding-top: 1em;
   position: relative;
   text-align: center;
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
 }
 
 .cart svg {
-  width: 25px;
+  width: 50px;
+  height: 50px;
 }
 
 .cart:hover svg {
   fill: gray;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #c05f00;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 /* End cart icon styles */
@@ -208,7 +223,6 @@ button {
   display: grid;
   grid-template-columns: 25% auto 15%;
   font-size: var(--small-font);
-  /* max-height: 120px; */
   align-items: center;
 }
 
@@ -260,22 +274,6 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
-}
-
-.cart {
-  position: relative;
-}
-
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #c05f00;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 0.75rem;
-  font-weight: bold;
 }
 
 .category-list {
@@ -427,4 +425,51 @@ footer {
 .success-message p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+}
+
+@keyframes cartBounce {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-bounce {
+  animation: cartBounce 0.5s ease;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search input {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 200px;
+}
+
+.search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
