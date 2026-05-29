@@ -393,3 +393,38 @@ footer {
   margin-bottom: 1rem;
   color: #c05f00;
 }
+
+.alert {
+  background-color: #ffeded;
+  border: 1px solid #e00;
+  color: #e00;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert span {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.success-message {
+  text-align: center;
+  padding: 3rem;
+}
+
+.success-message h2 {
+  font-size: 2rem;
+  color: #c05f00;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
